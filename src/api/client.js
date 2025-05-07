@@ -6,7 +6,8 @@ export function uploadFiles(endpoint, user, file) {
     formData.append(file.name, file);
 
     // Send the request
-    return Request.POST(`file/${user}/upload`, {body: formData, headers: {'Content-Type': undefined}}, endpoint);
+    response = Request.POST(`file/${user}/upload`, {body: formData, headers: {'Content-Type': undefined}}, endpoint);
+    return response;
 }
 
 export function doMapping(endpoint, user, filename, mapping, schema) {
